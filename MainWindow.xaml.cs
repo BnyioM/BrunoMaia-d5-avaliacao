@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using BrunoMaia_d7_avaliacao.Data;
 
 namespace BrunoMaia_d7_avaliacao
@@ -22,24 +23,33 @@ namespace BrunoMaia_d7_avaliacao
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private readonly Context context;
-        //User newUser = new();
-        public MainWindow(/*Context context*/)
+        private readonly Context context;
+        public MainWindow(Context context)
         {
-            //this.context = context;
+            this.context = context;
             InitializeComponent();
-            //GetUsers();
-            //NewUserGrid.DataContext = newUser;
-        }
-
-        private void GetUsers()
-        {
-            //UserDataGrid.ItemsSource = context.Users.ToList();
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
+            bool authorized = false;
 
+            List<User> users = this.context.Users.ToList();
+
+            foreach(User user in users)
+            {
+                if(user.Username == txtUsername.Text && user.Password == txtPassword.Password)
+                {
+                    authorized = true;
+                }
+            }
+
+            if(authorized)
+            {
+                MessageBox.Show("Usuário autenticado!");
+            } else {
+                MessageBox.Show("Credenciais inválidas!");
+            }
         }
     }
 }

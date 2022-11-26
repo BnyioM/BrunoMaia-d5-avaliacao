@@ -5,6 +5,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BrunoMaia_d7_avaliacao.Data
 {
@@ -27,11 +28,12 @@ namespace BrunoMaia_d7_avaliacao.Data
         {
             return new User[]
             {
-            new User
-            {
-                Username = "admin@email.com",
-                Password = "admin123"
-            },
+                new User
+                {
+                    Id = Guid.NewGuid(),
+                    Username = "admin@email.com",
+                    Password = "admin123"
+                }
             };
         }
     }
