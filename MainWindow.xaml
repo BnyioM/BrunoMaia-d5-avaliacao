@@ -5,8 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BrunoMaia_d7_avaliacao"
         mc:Ignorable="d"
-        Title="MainWindow" Height="620" Width="480">
+        Title="D7-Avaliação" Height="660" Width="480"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <StackPanel>
-
+        <TextBlock x:Name="Titulo"
+                   Text="Autenticação de Usuário"
+                   Height="29"
+                   Width="287"
+                   FontSize="25"
+                   FontWeight="Bold"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="0,60,0,0">
+        </TextBlock>
+        <TextBlock Text="Usuário"
+                   Height="19"
+                   Width="58"
+                   FontSize="17"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Margin="60,56,0,0">
+        </TextBlock>
+        <TextBox x:Name="txtUsername"
+                 Margin="0,16,0,0"
+                 FontSize="25"
+                 Background="LightGray"
+                 Foreground="Black"
+                 BorderThickness="0,0,0,0"
+                 Height="60"
+                 Width="360"
+                 VerticalContentAlignment="Center"
+                 Padding="3,0,0,0">
+        </TextBox>
+        <TextBlock Text="Senha"
+                   Height="19"
+                   Width="48"
+                   FontSize="17"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Margin="60,85,0,0">
+        </TextBlock>
+        <PasswordBox x:Name="txtPassword"
+                 Margin="0,16,0,0"
+                 FontSize="25"
+                 Background="LightGray"
+                 Foreground="Black"
+                 BorderThickness="0,0,0,0"
+                 Height="60"
+                 Width="360"
+                 VerticalContentAlignment="Center"
+                 Padding="3,0,0,0">
+        </PasswordBox>
+        <Button x:Name="LoginBtn"
+                BorderThickness="0"
+                VerticalContentAlignment="Center"
+                HorizontalAlignment="Center"
+                Content="Acessar"
+                Height="60"
+                Width="240"
+                Foreground="Black"
+                FontSize="17"
+                Cursor="Hand"
+                Margin="0,120,0,60"
+                Click="Login_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </StackPanel>
 </Window>

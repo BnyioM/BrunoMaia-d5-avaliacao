@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
+using BrunoMaia_d7_avaliacao.Data;
 
 namespace BrunoMaia_d7_avaliacao
 {
@@ -20,9 +22,24 @@ namespace BrunoMaia_d7_avaliacao
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        //private readonly Context context;
+        //User newUser = new();
+        public MainWindow(/*Context context*/)
         {
+            //this.context = context;
             InitializeComponent();
+            //GetUsers();
+            //NewUserGrid.DataContext = newUser;
+        }
+
+        private void GetUsers()
+        {
+            //UserDataGrid.ItemsSource = context.Users.ToList();
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
